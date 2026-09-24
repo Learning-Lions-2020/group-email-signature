@@ -58,7 +58,7 @@
   <div class="container">
     <div class="input-container">
       <input type="text" id="nameInput" placeholder="Your Name">
-      <input type="url" id="linkedinInput" placeholder="LinkedIn URL (optional)">
+      <input type="url" id="linkedinInput" value="https://www.linkedin.com/school/learninglions/" placeholder="LinkedIn URL">
       <input type="tel" id="phoneInput" placeholder="Phone Number (optional)">
     </div>
     <div class="signature-container">
@@ -132,7 +132,7 @@
   <script>
     function updateSignature() {
       const name = document.getElementById('nameInput').value || 'Your Name';
-      const linkedin = document.getElementById('linkedinInput').value.trim();
+      const linkedin = document.getElementById('linkedinInput').value.trim() || 'https://www.linkedin.com/school/learninglions/';
       const phone = document.getElementById('phoneInput').value.trim();
 
       document.getElementById('nameSpan').innerHTML = `${name}<br>`;
