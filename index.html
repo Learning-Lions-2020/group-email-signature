@@ -1,178 +1,419 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>Email Signature Generator</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: white;
-    }
-    .container {
-      display: flex;
-      width: 80%;
-      max-width: 800px;
-      border: 1px solid #ccc;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .input-container {
-      flex: 1;
-      padding: 0 20px;
-    }
-    .input-container input {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 8px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .signature-container {
-      flex: 1;
-      padding: 20px;
-      border-left: 1px solid #ccc;
-    }
-    .signature {
-      position: relative;
-    }
-    .copy-button {
-      position: absolute;
-      bottom: 22%;
-      padding: 8px 16px;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <img style="width: 10%; position: absolute; top: 70px; left: 35%;" border="0" src="https://ci5.googleusercontent.com/proxy/jGPwtjFp4uGGiRoVzgcYZy896YeQVdCG0vTcdEo3VzhIK4flntWqbluIJzFKya2mo39QOOmrMYW-7oNo0wockebLdpMu-10=s0-d-e1-ft#https://www.learninglions.org/.img_sig/symbol_ll.jpg" alt="Learning Lions logo" class="CToWUd" data-bit="iit">
-  <img style="width: 10%; position: absolute; top: 70px; left: 45%;" border="0" src="Logos/logo_DL-min.png" alt="Digital Lions logo">
-  <img style="width: 10%; position: absolute; top: 70px; left: 55%;" border="0" src="Logos/logo_SL-min.png" alt="Startup Lions logo">
-  <div class="container">
-    <div class="input-container">
-      <input type="text" id="nameInput" placeholder="Your Name">
-      <input type="url" id="linkedinInput" value="https://www.linkedin.com/school/learninglions/" placeholder="LinkedIn URL">
-      <input type="tel" id="phoneInput" placeholder="Phone Number (optional)">
-    </div>
-    <div class="signature-container">
-      <div class="signature" id="signature">
-        <table border="0" cellpadding="0" cellspacing="0" style="color:rgb(0,0,0);line-height:3px;font-size:1px;padding:0px;border-spacing:0px;margin:0px;border-collapse:collapse">
-          <tbody>
-            <tr>
-              <td style="padding-bottom:3px">
-                <table border="0" cellpadding="0" cellspacing="0" style="font-family:Arial,Helvetica,sans-serif;line-height:12px;padding:0px;border-spacing:0px;margin:0px;border-collapse:collapse">
-                  <tbody>
-                    <tr>
-                      <td valign="middle" style="font-size:9px;line-height:12px;color:rgb(79,78,85)">
-                        <span id="nameSpan" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:12px;font-weight:bold;color:rgb(110,170,126);text-transform: uppercase;">Your Name<br></span>
-                        <span id="linkedinSpan" style="display: none; font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:13px"></span>
-                        <span id="phoneSpan" style="display: none; font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:13px"></span>
-                        <span style="font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:13px;color:rgb(110,170,126)">
-                          <a href="http://www.learninglions.org" style="color:rgb(110,170,126)" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://www.learninglions.org&amp;source=gmail&amp;ust=1701154493950000&amp;usg=AOvVaw2qD0V3gew_iLTPH3VAdL8s">www.learninglions.org</a><br>
-                        </span>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr>
-                      <td valign="middle" style="line-height:12px">
-                        <table border="0" cellpadding="0" cellspacing="0" width="234" style="border-spacing:0;border-collapse:collapse;table-layout:fixed;width:234px">
-                          <tbody>
-                            <tr>
-                              <td width="78" valign="top" style="width:78px;padding:12px 4px 0;vertical-align:top">
-                                <img width="70" height="70" border="0" src="https://ci5.googleusercontent.com/proxy/jGPwtjFp4uGGiRoVzgcYZy896YeQVdCG0vTcdEo3VzhIK4flntWqbluIJzFKya2mo39QOOmrMYW-7oNo0wockebLdpMu-10=s0-d-e1-ft#https://www.learninglions.org/.img_sig/symbol_ll.jpg" alt="Learning Lions logo" style="display:block" class="CToWUd" data-bit="iit">
-                                <span style="display:block;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:14px;font-weight:bold;color:rgb(110,170,126);text-align:center">Learning Lions</span>
-                              </td>
-                              <td width="78" valign="top" style="width:78px;padding:12px 4px 0;vertical-align:top">
-                                <img width="70" height="70" border="0" src="Logos/logo_DL-min.png" alt="Digital Lions logo" style="display:block">
-                                <span style="display:block;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:14px;font-weight:bold;color:rgb(218,166,0);text-align:center">Digital Lions</span>
-                              </td>
-                              <td width="78" valign="top" style="width:78px;padding:12px 4px 0;vertical-align:top">
-                                <img width="70" height="70" border="0" src="Logos/logo_SL-min.png" alt="Startup Lions logo" style="display:block">
-                                <span style="display:block;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:14px;font-weight:bold;color:rgb(245,130,32);text-align:center">Startup Lions</span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <tbody>
-                    <tr>
-                      <td style="font-size:9px;line-height:12px;color:rgb(79,78,85)"><br>
-                        <span style="font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:13px">A non-profit ecosystem dedicated to fighting poverty in rural Africa through digital vocational training, fair-trade outsourcing, and entrepreneurship support.<br></span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="font-size:18px;line-height:12px;font-weight:bold;border-bottom:2px solid rgb(167,169,172);padding-top:14px;color:rgb(167,169,172)"></td>
-                    </tr>
-                    <tr>
-                      <td style="font-size:9px;line-height:12px;color:rgb(79,78,85)"><br><span style="font-family:Arial,Helvetica,sans-serif;line-height:12px">Learning Lions gemeinnützige UG (haftungsbeschränkt)<br>Schloßstrasse 8 | 82260 Geltendorf | Germany<br>Managing Directors: Ludwig von Bayern | Wilhelm von Stotzingen<br>Registry Court Augsburg, Germany | Registry Number 30328</span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <head>
+    <title>Email Signature Generator</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: white;
+      }
+      .container {
+        display: flex;
+        width: 80%;
+        max-width: 800px;
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .input-container {
+        flex: 1;
+        padding: 0 20px;
+      }
+      .input-container input {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .signature-container {
+        flex: 1;
+        padding: 20px;
+        border-left: 1px solid #ccc;
+      }
+      .signature {
+        position: relative;
+      }
+      .copy-button {
+        position: absolute;
+        bottom: 22%;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      style="width: 10%; position: absolute; top: 70px; left: 35%"
+      border="0"
+      src="https://www.learninglions.org/.img_sig/symbol_ll.jpg"
+      alt="Learning Lions logo"
+    />
+    <img
+      style="width: 10%; position: absolute; top: 70px; left: 45%"
+      border="0"
+      src="https://learninglions.org/.img_sig/symbol_DL.png"
+      alt="Digital Lions logo"
+    />
+    <img
+      style="width: 10%; position: absolute; top: 70px; left: 55%"
+      border="0"
+      src="https://learninglions.org/.img_sig/symbol_SL.png"
+      alt="Startup Lions logo"
+    />
+    <div class="container">
+      <div class="input-container">
+        <input type="text" id="nameInput" placeholder="Your Name" />
+        <input
+          type="url"
+          id="linkedinInput"
+          value="https://www.linkedin.com/school/learninglions/"
+          placeholder="LinkedIn URL"
+        />
+        <input
+          type="tel"
+          id="phoneInput"
+          placeholder="Phone Number (optional)"
+        />
       </div>
+      <div class="signature-container">
+        <div class="signature" id="signature">
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              color: rgb(0, 0, 0);
+              line-height: 3px;
+              font-size: 1px;
+              padding: 0px;
+              border-spacing: 0px;
+              margin: 0px;
+              border-collapse: collapse;
+            "
+          >
+            <tbody>
+              <tr>
+                <td style="padding-bottom: 3px">
+                  <table
+                    border="0"
+                    cellpadding="0"
+                    cellspacing="0"
+                    style="
+                      font-family: Arial, Helvetica, sans-serif;
+                      line-height: 12px;
+                      padding: 0px;
+                      border-spacing: 0px;
+                      margin: 0px;
+                      border-collapse: collapse;
+                    "
+                  >
+                    <tbody>
+                      <tr>
+                        <td
+                          valign="middle"
+                          style="
+                            font-size: 9px;
+                            line-height: 12px;
+                            color: rgb(79, 78, 85);
+                          "
+                        >
+                          <span
+                            id="nameSpan"
+                            style="
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 13px;
+                              line-height: 12px;
+                              font-weight: bold;
+                              color: rgb(110, 170, 126);
+                              text-transform: uppercase;
+                            "
+                            >Your Name<br
+                          /></span>
+                          <span
+                            id="linkedinSpan"
+                            style="
+                              display: none;
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 11px;
+                              line-height: 13px;
+                            "
+                          ></span>
+                          <span
+                            id="phoneSpan"
+                            style="
+                              display: none;
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 11px;
+                              line-height: 13px;
+                            "
+                          ></span>
+                          <span
+                            style="
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 11px;
+                              line-height: 13px;
+                              color: rgb(110, 170, 126);
+                            "
+                          >
+                            <a
+                              href="http://www.learninglions.org"
+                              style="color: rgb(110, 170, 126)"
+                              target="_blank"
+                              data-saferedirecturl="https://www.google.com/url?q=http://www.learninglions.org&amp;source=gmail&amp;ust=1701154493950000&amp;usg=AOvVaw2qD0V3gew_iLTPH3VAdL8s"
+                              >www.learninglions.org</a
+                            ><br />
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td valign="middle" style="line-height: 12px">
+                          <table
+                            border="0"
+                            cellpadding="0"
+                            cellspacing="0"
+                            width="234"
+                            style="
+                              border-spacing: 0;
+                              border-collapse: collapse;
+                              table-layout: fixed;
+                              width: 234px;
+                            "
+                          >
+                            <tbody>
+                              <tr>
+                                <td
+                                  width="78"
+                                  valign="top"
+                                  style="
+                                    width: 78px;
+                                    padding: 12px 4px 0;
+                                    vertical-align: top;
+                                  "
+                                >
+                                  <img
+                                    width="70"
+                                    height="70"
+                                    border="0"
+                                    src="https://www.learninglions.org/.img_sig/symbol_ll.jpg"
+                                    alt="Learning Lions logo"
+                                    style="display: block"
+                                  />
+                                  <span
+                                    style="
+                                      display: block;
+                                      font-family: Arial, Helvetica, sans-serif;
+                                      font-size: 12px;
+                                      line-height: 14px;
+                                      font-weight: bold;
+                                      color: rgb(110, 170, 126);
+                                      text-align: center;
+                                    "
+                                    >Learning Lions</span
+                                  >
+                                </td>
+                                <td
+                                  width="78"
+                                  valign="top"
+                                  style="
+                                    width: 78px;
+                                    padding: 12px 4px 0;
+                                    vertical-align: top;
+                                  "
+                                >
+                                  <img
+                                    width="70"
+                                    height="70"
+                                    border="0"
+                                    src="https://learninglions.org/.img_sig/symbol_DL.png"
+                                    alt="Digital Lions logo"
+                                    style="display: block"
+                                  />
+                                  <span
+                                    style="
+                                      display: block;
+                                      font-family: Arial, Helvetica, sans-serif;
+                                      font-size: 12px;
+                                      line-height: 14px;
+                                      font-weight: bold;
+                                      color: rgb(218, 166, 0);
+                                      text-align: center;
+                                    "
+                                    >Digital Lions</span
+                                  >
+                                </td>
+                                <td
+                                  width="78"
+                                  valign="top"
+                                  style="
+                                    width: 78px;
+                                    padding: 12px 4px 0;
+                                    vertical-align: top;
+                                  "
+                                >
+                                  <img
+                                    width="70"
+                                    height="70"
+                                    border="0"
+                                    src="https://learninglions.org/.img_sig/symbol_SL.png"
+                                    alt="Startup Lions logo"
+                                    style="display: block"
+                                  />
+                                  <span
+                                    style="
+                                      display: block;
+                                      font-family: Arial, Helvetica, sans-serif;
+                                      font-size: 12px;
+                                      line-height: 14px;
+                                      font-weight: bold;
+                                      color: rgb(245, 130, 32);
+                                      text-align: center;
+                                    "
+                                    >Startup Lions</span
+                                  >
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            font-size: 9px;
+                            line-height: 12px;
+                            color: rgb(79, 78, 85);
+                          "
+                        >
+                          <br />
+                          <span
+                            style="
+                              font-family: Arial, Helvetica, sans-serif;
+                              font-size: 12px;
+                              line-height: 13px;
+                            "
+                            >A non-profit ecosystem dedicated to fighting
+                            poverty in rural Africa through digital vocational
+                            training, fair-trade outsourcing, and
+                            entrepreneurship support.<br
+                          /></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            font-size: 18px;
+                            line-height: 12px;
+                            font-weight: bold;
+                            border-bottom: 2px solid rgb(167, 169, 172);
+                            padding-top: 14px;
+                            color: rgb(167, 169, 172);
+                          "
+                        ></td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            font-size: 9px;
+                            line-height: 12px;
+                            color: rgb(79, 78, 85);
+                          "
+                        >
+                          <br /><span
+                            style="
+                              font-family: Arial, Helvetica, sans-serif;
+                              line-height: 12px;
+                            "
+                            >Learning Lions gemeinnützige UG
+                            (haftungsbeschränkt)<br />Schloßstrasse 8 | 82260
+                            Geltendorf | Germany<br />Managing Directors: Ludwig
+                            von Bayern | Wilhelm von Stotzingen<br />Registry
+                            Court Augsburg, Germany | Registry Number
+                            30328</span
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <button class="copy-button" id="copyButton">Copy Signature</button>
+        <button class="copy-button" id="copyButton">Copy Signature</button>
+      </div>
     </div>
-  </div>
 
-  <script>
-    function updateSignature() {
-      const name = document.getElementById('nameInput').value || 'Your Name';
-      const linkedin = document.getElementById('linkedinInput').value.trim() || 'https://www.linkedin.com/school/learninglions/';
-      const phone = document.getElementById('phoneInput').value.trim();
+    <script>
+      function updateSignature() {
+        const name = document.getElementById("nameInput").value || "Your Name";
+        const linkedin =
+          document.getElementById("linkedinInput").value.trim() ||
+          "https://www.linkedin.com/school/learninglions/";
+        const phone = document.getElementById("phoneInput").value.trim();
 
-      document.getElementById('nameSpan').innerHTML = `${name}<br>`;
+        document.getElementById("nameSpan").innerHTML = `${name}<br>`;
 
-      if (linkedin) {
-        document.getElementById('linkedinSpan').style.display = 'inline';
-        document.getElementById('linkedinSpan').innerHTML = `<a href="${linkedin}" style="color:rgb(79,78,85)" target="_blank">LinkedIn | Learning Lions</a><br>`;
-      } else {
-        document.getElementById('linkedinSpan').style.display = 'none';
+        if (linkedin) {
+          document.getElementById("linkedinSpan").style.display = "inline";
+          document.getElementById("linkedinSpan").innerHTML =
+            `<a href="${linkedin}" style="color:rgb(79,78,85)" target="_blank">LinkedIn | Learning Lions</a><br>`;
+        } else {
+          document.getElementById("linkedinSpan").style.display = "none";
+        }
+
+        if (phone) {
+          document.getElementById("phoneSpan").style.display = "inline";
+          document.getElementById("phoneSpan").innerHTML =
+            `<a id="phoneLink" href="tel:${phone}" style="line-height:13px;display:inline;color:rgb(79,78,85)" target="_blank">${phone}</a><br>`;
+        } else {
+          document.getElementById("phoneSpan").style.display = "none";
+        }
       }
 
-      if (phone) {
-        document.getElementById('phoneSpan').style.display = 'inline';
-        document.getElementById('phoneSpan').innerHTML = `<a id="phoneLink" href="tel:${phone}" style="line-height:13px;display:inline;color:rgb(79,78,85)" target="_blank">${phone}</a><br>`;
-      } else {
-        document.getElementById('phoneSpan').style.display = 'none';
+      function copySignature() {
+        const signature = document.getElementById("signature");
+        const range = document.createRange();
+        range.selectNode(signature);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        alert("Signature copied to clipboard!");
       }
-    }
 
-    function copySignature() {
-      const signature = document.getElementById('signature');
-      const range = document.createRange();
-      range.selectNode(signature);
-      window.getSelection().removeAllRanges();
-      window.getSelection().addRange(range);
-      document.execCommand('copy');
-      window.getSelection().removeAllRanges();
-      alert('Signature copied to clipboard!');
-    }
+      // Update signature on input change
+      document
+        .getElementById("nameInput")
+        .addEventListener("input", updateSignature);
+      document
+        .getElementById("linkedinInput")
+        .addEventListener("input", updateSignature);
+      document
+        .getElementById("phoneInput")
+        .addEventListener("input", updateSignature);
 
-    // Update signature on input change
-    document.getElementById('nameInput').addEventListener('input', updateSignature);
-    document.getElementById('linkedinInput').addEventListener('input', updateSignature);
-    document.getElementById('phoneInput').addEventListener('input', updateSignature);
+      // Copy signature to clipboard
+      document
+        .getElementById("copyButton")
+        .addEventListener("click", copySignature);
 
-    // Copy signature to clipboard
-    document.getElementById('copyButton').addEventListener('click', copySignature);
-
-    // Initial signature update
-    updateSignature();
-  </script>
-</body>
+      // Initial signature update
+      updateSignature();
+    </script>
+  </body>
 </html>
